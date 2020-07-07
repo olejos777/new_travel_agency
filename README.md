@@ -13,6 +13,13 @@
 - `globalRedux.js` - it maintain whole application state and not just it's fragments. We need this to set at the same time up more than one props stored in the application state.
 >Konkretniej rzecz biorąc, chodzi o funkcję `parseTrips.js`, którą znajdziesz w katalogu `src/utils`. Wykorzystujemy ją w komponencie `App`. Przyjmuje ona listę wszystkich wycieczek, a szczegółowe informacje o krajach pobiera z pliku `countries.json`, ale w stanie nie są zapisywane dane wszystkich krajów – tworzy zestawienie wyłącznie tych krajów, regionów i subregionów, do których oferujemy wycieczki.
 - `countries.json` - each country has assigned a region and a subregion - that's why we create a summary in order to display countries (or trips) according to ths division.
+- `pricing.json` - contains configuration of all trip's options.
+- `orderRedux.js` - contains selectors to read whole order or just a few options. Action `SET_OPTION` is responsible for updating selected option value in the application state. Reducer that reacts on `SET_OPTION`
+> W reducerze zwróć szczególną uwagę na sposób aktualizacji statePart poprzez rozpakowanie zarówno samego statePart, jak i statePart.options. Pamiętaj, że reducer nie może zmieniać statePart, ani żadnego obiektu (ani tablicy) pobranych z niego. Dlatego tworzymy nowe obiekty, rozpakowując do nich wartości otrzymane w statePart
+- `parseTrips.js` - new version of the file responsible for generating initial object `order` in the application state (based on the option definition from `pricing.json`).
+
+
+
 
 
 - `/layout` – responsible for layout of the page

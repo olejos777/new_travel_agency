@@ -17,7 +17,9 @@
 - `orderRedux.js` - contains selectors to read whole order or just a few options. Action `SET_OPTION` is responsible for updating selected option value in the application state. Reducer that reacts on `SET_OPTION`
 > W reducerze zwróć szczególną uwagę na sposób aktualizacji statePart poprzez rozpakowanie zarówno samego statePart, jak i statePart.options. Pamiętaj, że reducer nie może zmieniać statePart, ani żadnego obiektu (ani tablicy) pobranych z niego. Dlatego tworzymy nowe obiekty, rozpakowując do nich wartości otrzymane w statePart
 - `parseTrips.js` - new version of the file responsible for generating initial object `order` in the application state (based on the option definition from `pricing.json`).
-
+- `formatPrice.js` - contains a function to format received in an argument number to the proper format (round number and uses americans notation of number - comas as a tousand's separators - adds `$` symbol.). If input !number then the number will be returned without implementing changes.
+- `parseOptionPrice.js` - it provides a function that recognizes if it receives a number or a text with formated price or % factor
+- `'calculateTotal.js` - contains function that calculate order price based on base price and selected options )stored in the application state) and base on the data from `pricing.json`
 
 
 
@@ -32,7 +34,7 @@
 - `react-flexbox-grid` - provides:
 * `Grid` used instead of `Container`. Don't nest another `Grid` inside `Grid`.
 * `Row` - a row where `columns will be nested
-* `Col` - columns that can be set up with different width property for various rdisplay resolution
+* `Col` - columns that can be set up with different with property for various display resolution
 
 [https://github.com/roylee0704/react-flexbox-grid]
 

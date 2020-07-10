@@ -46,4 +46,4 @@
 ## Comments
 
 ### Trip price
-![alt text](./Readme/PriceCalculation.png "Price")
+![alt text](./Readme/Price_calculation.png "Price")

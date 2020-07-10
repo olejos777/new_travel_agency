@@ -4,14 +4,14 @@ import styles from './OrderSummary.scss';
 import { calculateTotal } from '../../../utils/calculateTotal';
 import { formatPrice } from '../../../utils/formatPrice';
 
-const OrderSummary = ({ cost, options }) => (
+const OrderSummary = ({ costing, options }) => (
   <h2 className={styles.component}>
-    Total:<strong> {calculateTotal(formatPrice(cost), options)}</strong>
+    Total:<strong> {calculateTotal(formatPrice(costing), options)}</strong>
   </h2>
 );
 
 OrderSummary.propTypes = {
-  cost: PropTypes.string,
+  costing: PropTypes.string,
   options: PropTypes.object,
 };
 

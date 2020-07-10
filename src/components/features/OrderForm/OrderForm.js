@@ -7,7 +7,7 @@ const OrderForm = (props) => (
   <Grid>
     <Row>
       <Col xs={12}>
-        <OrderSummary cost={props.tripCost} options={props.options} />
+        <OrderSummary costing={props.tripCosting} options={props.options} />
       </Col>
     </Row>
   </Grid>
@@ -15,7 +15,7 @@ const OrderForm = (props) => (
 
 OrderForm.propTypes = {
   options: PropTypes.object,
-  tripCost: PropTypes.string,
+  tripCosting: PropTypes.string,
 };
 
 export default OrderForm;

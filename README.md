@@ -41,3 +41,9 @@
 [https://roylee0704.github.io/react-flexbox-grid/]
 
 - `Section.js` - allows to use different variants of styles for page section
+
+
+## Comments
+
+### Trip price
+![alt text](./Readme/PriceCalculation.png "Price")

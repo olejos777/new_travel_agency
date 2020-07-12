@@ -21,7 +21,6 @@ const OrderForm = props => (
 );
 
 OrderForm.propTypes = {
-  props: PropTypes.node,
   options: PropTypes.object,
   tripCosting: PropTypes.string,
   setOrderOption: PropTypes.func,

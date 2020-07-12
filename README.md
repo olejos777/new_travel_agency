@@ -42,6 +42,8 @@
 
 - `Section.js` - allows to use different variants of styles for page section
 
+- `npm install react-datepicker --save` -
+
 
 ## Comments
 

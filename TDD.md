@@ -30,7 +30,8 @@ Pierwszy z nich posłuży do jednorazowego uruchomienia wszystkich testów, drug
 `npm install --global mocha`
 or as a development dependency for your project:
 `npm install --save-dev mocha`
-(Mocha web page)[https://mochajs.org/]
+
+Mocha web page [https://mochajs.org/]
 
 Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases.
 
@@ -51,7 +52,7 @@ Set jasmine as your test script in your package.json
 Run your tests
 `npm test`
 
-(Jasmin web page)[https://jasmine.github.io/pages/getting_started.html]
+Jasmin web page [https://jasmine.github.io/pages/getting_started.html]
 
 Jasmine is a behavior-driven development framework for testing JavaScript code. It does not depend on any other JavaScript frameworks. It does not require a DOM. And it has a clean, obvious syntax so that you can easily write tests.
 Low overhead, jasmine-core has no external dependencies.
@@ -59,11 +60,11 @@ Comes out of the box with everything you need to test your code.
 Run your browser tests and Node.js tests with the same framework.
 
 
-### `Jest` - is a delightful JavaScript Testing Framework with a focus on simplicity.
+### `Jest`
 
 `npm install --save-dev jest`
 
-(Jest web page)[https://jestjs.io/docs/en/getting-started.html]
+Jest web page [https://jestjs.io/docs/en/getting-started.html]
 
 Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows you to write tests with an approachable, familiar and feature-rich API that gives you results quickly.
 Jest is well-documented, requires little configuration and can be extended to match your requirements.
@@ -80,13 +81,14 @@ Jest uses a custom resolver for imports in your tests, making it simple to mock 
 ### `QUnit` -
 `npm install --save-dev qunit`
 
-(QUnit web page)[https://qunitjs.com/]
+QUnit web page [https://qunitjs.com/]
 
 The powerful, easy-to-use JavaScript testing framework.
 Easy, zero configuration setup for any Node.js project and minimal configuration for Browser-based projects.
 Tests can be run anywhere; Node, your browser, even inside a Web Worker. Test your code where it runs.
 Flexible APIs for custom assertions, runners, and reporters mean you can extend QUnit to fit your needs.
-- `Tape`
+
+### `Tape`
 
 
 ## Rodzaje testów

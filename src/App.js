@@ -15,7 +15,7 @@ import NotFound from './components/views/NotFound/NotFound';
 import Countries from './components/views/Countries/CountriesContainer';
 import Regions from './components/views/Regions/RegionsContainer';
 import Trip from './components/views/Trip/TripContainer';
-import Country from './components/views/Country/Country';
+import Country from './components/views/Country/CountryContainer';
 
 import parseTrips from './utils/parseTrips';
 import { setMultipleStates } from './redux/globalRedux';

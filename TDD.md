@@ -25,6 +25,19 @@ Pierwszy z nich posłuży do jednorazowego uruchomienia wszystkich testów, drug
 "jest": true
 ```
 
+### Pierwszy test
+`npm run test:watch` - Po tej komendzie testy będą wykonywane automatycznie po wprowadzeniu zmian w plikach.
+`npm run test` - uruchamia pojedynczy test.
+
+`describe` służy do zgrupowania kilku testów. Tej grupie nadajemy opis "Component Hero" w pierwszym argumencie. Drugim argumentem jest funkcja strzałkowa, której zawartość będzie zawierała poszczególne testy.
+
+Funkcja `it` służy do zdefiniowania pojedynczego testu, którego opis znajduje się w pierwszym argumencie – "should render without crashing".
+
+Kod testu składa się z dwóch linijek:
+
+W stałej `component` zapisujemy wynik funkcji `shallow`, która renderuje dla nas ten komponent.
+Funkcja `expect` służy do tego, aby porównywać podany jej argument z oczekiwanym wynikiem.
+
 ## Frameworki testowe:
 ### `Mocha`
 `npm install --global mocha`

@@ -20,12 +20,25 @@ describe('Component TripSummary', () => {
   });*/
 
   it('should render correct alt and src of image', () => {
-    const component = shallow(<TripSummary name='Lorem ipsum' image='imageSrc' tags={[]}/>);
+    const component = shallow(<TripSummary name='Lorem ipsum' image='imageSrc' tags={[]} />);
     expect(component).toBeTruthy();
   });
 
   it('should render correct name, cost, days', () => {
-    const component = shallow(<TripSummary name='Lorem ipsum' cost='hundred' days={1} tags={[]}/>);
+    const component = shallow(<TripSummary name='Lorem ipsum' cost='hundred' days={1} tags={[]} />);
     expect(component).toBeTruthy();
+  });
+
+  it('should throw error without required props', () => {
+    expect(() => shallow(<TripSummary />)).toThrow();
+  });
+
+  it('should render tags without crashing', () => {
+    const expectedTags = ['first', 'second', 'third'];
+    const component = shallow(<TripSummary tags={expectedTags} />);
+
+    expect(component.find('.tag').at(0)).toEqual[expectedTags[0]];
+    expect(component.find('.tag').at(1)).toEqual[expectedTags[1]];
+    expect(component.find('.tag').at(2)).toEqual[expectedTags[2]];
   });
 });

@@ -8,9 +8,11 @@ describe('Component Hero', () => {
     expect(component).toBeTruthy();
     //console.log(component.debug());
   });
+
   it('should throw error without required props', () => {
     expect(() => shallow(<Hero />)).toThrow();
   });
+
   it('should render correct title and image', () => {
     const expectedTitle = 'Lorem ipsum';
     const expectedImage = 'imageSrc.jpg';

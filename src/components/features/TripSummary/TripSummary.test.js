@@ -8,6 +8,15 @@ describe('Component TripSummary', () => {
     const component = shallow(<TripSummary id={expectedUrl} tags={[]} />);
 
     expect(component.find('.link').prop('to')).toEqual(`/trip/${expectedUrl}`);
-    console.log(component.debug());
+  });
+
+  it('should render correct alt and src of image', () => {
+    const expectedImage = 'image.jpg';
+    const expectedAlt = 'pictureName';
+    const component = shallow(<TripSummary image={expectedImage} name={expectedAlt} tags={[]} />);
+
+    expect(component.find('img').prop('src')).toEqual(expectedImage);
+    expect(component.find('img').prop('alt')).toEqual(expectedAlt);
+
   });
 });

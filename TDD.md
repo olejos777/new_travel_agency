@@ -5,38 +5,6 @@ Frameworki odpowiadają za konfigurację środowiska testowego, sugerują sposó
 
 W przypadku __Reacta__, bardzo często używana kombinacją jest **Jest** i **Enzyme** (czytaj: __dżest__ i __enzajm__). Pierwszy z nich jest frameworkiem służącym do uruchamiania testów, asercji (sprawdzania, czy wynik testu spełnia oczekiwania), oraz mockowania. Natomiast **Enzyme** jest biblioteką, która ułatwi nam pisanie testów, w tym renderowanie komponentów, symulowanie eventów, czy przeszukiwanie symulowanego drzewa DOM.
 
-## Instalacja Jest i Enzyme
-1. `npm install -D babel-jest@24.8.0 enzyme@3.9.0 enzyme-adapter-react-16@1.12.1 identity-obj-proxy@3.0.0 jest@24.8.0 jest-css-modules@2.0.0 jest-environment-jsdom-fourteen@0.1.0 jest-resolve@24.8.0 jest-watch-typeahead@0.3.1 jest-prop-type-error@1.1.0 react-test-renderer@16.8.6`
-
-2. W pliku package.json
-```json
-"test": "jest",
-"test:watch": "jest --watch",
-"test:coverage": "jest --coverage --colors"
-```
-Pierwszy z nich posłuży do jednorazowego uruchomienia wszystkich testów, drugi do ciągłego uruchamiania testów w czasie pracy nad projektem, a trzeci pokaże nam stopień pokrycia kodu przez testy.
-
-3. Doda pliki konfiguracyjne do głównego katalogu projektu.
-`enzyme.config.js`
-`jest.config.js`
-
-4. Ostatnia zmiana, która będzie nam potrzebna przed rozpoczęciem pisania testów, będzie w pliku `.eslintrc`. W sekcji `env` dodaj:
-```json
-"jest": true
-```
-
-### Pierwszy test
-`npm run test:watch` - Po tej komendzie testy będą wykonywane automatycznie po wprowadzeniu zmian w plikach.
-`npm run test` - uruchamia pojedynczy test.
-
-`describe` służy do zgrupowania kilku testów. Tej grupie nadajemy opis "Component Hero" w pierwszym argumencie. Drugim argumentem jest funkcja strzałkowa, której zawartość będzie zawierała poszczególne testy.
-
-Funkcja `it` służy do zdefiniowania pojedynczego testu, którego opis znajduje się w pierwszym argumencie – "should render without crashing".
-
-Kod testu składa się z dwóch linijek:
-
-W stałej `component` zapisujemy wynik funkcji `shallow`, która renderuje dla nas ten komponent.
-Funkcja `expect` służy do tego, aby porównywać podany jej argument z oczekiwanym wynikiem.
 
 ## Frameworki testowe:
 ### `Mocha`
@@ -127,3 +95,38 @@ Na tym poziomie sprawdzamy, jak komponenty współpracują ze sobą. To w tym wy
 Inaczej zwane testami systemowymi, polegają na sprawdzaniu scenariuszy zachowań użytkowników. W tym podejściu, testy symulują zachowania osoby korzystającej ze strony – czyli taki test mógłby np. otwierać stronę główną, klikać link __Trips__, klikać w pierwszą wycieczkę, wybrać wycieczkę dla 3 osób z prywatnym basenem, podać nazwisko i numer telefonu i kliknąć guzik wysłania zamówienia, a na końcu oczekiwać, że pojawi się strona z potwierdzeniem.
 
 Dzięki temu poziomowi testów sprawdza się już nie tylko czy komponenty poprawnie działają i współpracują ze sobą, ale czy cała aplikacja funkcjonuje prawidłowo. Na tym etapie można wychwycić kolejne błędy – np. niedziałające linki do podstron czy problemy z wysyłaniem formularza.
+
+## Instalacja Jest i Enzyme
+1. `npm install -D babel-jest@24.8.0 enzyme@3.9.0 enzyme-adapter-react-16@1.12.1 identity-obj-proxy@3.0.0 jest@24.8.0 jest-css-modules@2.0.0 jest-environment-jsdom-fourteen@0.1.0 jest-resolve@24.8.0 jest-watch-typeahead@0.3.1 jest-prop-type-error@1.1.0 react-test-renderer@16.8.6`
+
+2. W pliku package.json
+```json
+"test": "jest",
+"test:watch": "jest --watch",
+"test:coverage": "jest --coverage --colors"
+```
+Pierwszy z nich posłuży do jednorazowego uruchomienia wszystkich testów, drugi do ciągłego uruchamiania testów w czasie pracy nad projektem, a trzeci pokaże nam stopień pokrycia kodu przez testy.
+
+3. Doda pliki konfiguracyjne do głównego katalogu projektu.
+`enzyme.config.js`
+`jest.config.js`
+
+4. Ostatnia zmiana, która będzie nam potrzebna przed rozpoczęciem pisania testów, będzie w pliku `.eslintrc`. W sekcji `env` dodaj:
+```json
+"jest": true
+```
+
+### Pierwszy test
+`npm run test:watch` - Po tej komendzie testy będą wykonywane automatycznie po wprowadzeniu zmian w plikach.
+`npm run test` - uruchamia pojedynczy test.
+
+`describe` służy do zgrupowania kilku testów. Tej grupie nadajemy opis "Component Hero" w pierwszym argumencie. Drugim argumentem jest funkcja strzałkowa, której zawartość będzie zawierała poszczególne testy.
+
+Funkcja `it` służy do zdefiniowania pojedynczego testu, którego opis znajduje się w pierwszym argumencie – "should render without crashing".
+
+Kod testu składa się z dwóch linijek:
+
+W stałej `component` zapisujemy wynik funkcji `shallow`, która renderuje dla nas ten komponent.
+Funkcja `expect` służy do tego, aby porównywać podany jej argument z oczekiwanym wynikiem.
+
+`shallow` - Enzyme zawiera bibliotekę JSDOM, która symuluje drzewo DOM tworzone przez przeglądarkę. Pozwala nam to na niby-renderowanie komponentów do kodu JSX! Co więcej, funkcja shallow renderuje tylko komponent, który jej przekazujemy, bez renderowania komponentów zawartych w nim.

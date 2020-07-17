@@ -10,7 +10,7 @@
     "build": "webpack --mode production",
     "lint": "eslint src/",
     "test": "jest",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watch --verbose --maxWorkers=1",
     "test:coverage": "jest --coverage --colors"
   },
   "husky": {
@@ -67,6 +67,7 @@
     "jest-prop-type-error": "^1.1.0",
     "jest-resolve": "^24.8.0",
     "jest-watch-typeahead": "^0.3.1",
+    "@types/jest": "22.2.3",
     "lint-staged": "^8.1.5",
     "react-test-renderer": "^16.8.6",
     "redux-devtools-extension": "^2.13.8",

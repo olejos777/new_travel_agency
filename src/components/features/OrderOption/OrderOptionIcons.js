@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Icon from '../../common/Icon/Icon';
 import { formatPrice } from '../../../utils/formatPrice';
 
-const OrderOptionIcon = ({ required, values, setOptionValue, currentValue }) => (
+const OrderOptionIcons = ({ required, values, setOptionValue, currentValue }) => (
   <div className={styles.icon}>
     {required ? '' : (
       <div
@@ -25,11 +25,11 @@ const OrderOptionIcon = ({ required, values, setOptionValue, currentValue }) => 
   </div>
 );
 
-OrderOptionIcon.propTypes = {
+OrderOptionIcons.propTypes = {
   values: PropTypes.array,
   required: PropTypes.bool,
   currentValue: PropTypes.string,
   setOptionValue: PropTypes.func,
 };
 
-export default OrderOptionIcon;
+export default OrderOptionIcons;

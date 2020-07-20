@@ -130,3 +130,12 @@ W stałej `component` zapisujemy wynik funkcji `shallow`, która renderuje dla n
 Funkcja `expect` służy do tego, aby porównywać podany jej argument z oczekiwanym wynikiem.
 
 `shallow` - Enzyme zawiera bibliotekę JSDOM, która symuluje drzewo DOM tworzone przez przeglądarkę. Pozwala nam to na niby-renderowanie komponentów do kodu JSX! Co więcej, funkcja shallow renderuje tylko komponent, który jej przekazujemy, bez renderowania komponentów zawartych w nim.
+
+`npm install -S json-server`
+`npm install -D npm-run-all` - Pakiet `npm-run-all` pozwoli nam na równoległe uruchomienie:
+- komendy `node server.js`, która uruchomi `json-server` za pomocą pliku `server.js`,
+- taska `server:dev`, który uruchamia podgląd developerski (`webpack-dev-server`), tak samo jak do tej pory.
+
+`server.js` - We wcześniejszym projekcie ten plik służył wyłącznie do uruchomienia `json-server`, który jednocześnie pełnił rolę API (w oparciu o plik JSON), jak i zajmował się serwowaniem plików strony.
+
+Tym razem dodaliśmy do niego funkcjonalność kopiowania pliku `src/db.json` do katalogu server – ale tylko jeśli ten plik jeszcze nie istnieje. Dzięki temu przy kolejnych buildach nie będziemy nadpisywać jego zawartości.
